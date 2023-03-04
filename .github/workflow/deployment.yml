@@ -3,18 +3,18 @@ on: push
 jobs:
   deploy:
     runs-on: ubuntu/latest
-  steps:
-    - name: Get the code
-      uses: actions/checkout@v3
-    - name: Setup NodeJS
-      uses: setup-nodejs@v3
-      with:
-        node-version: 18
-    - name: Install dependencies
-      uses: npm ci
-    - name: Run linting
-      uses: npm run lint
-    - name: Build project
-      uses: npm run build 
-    - name: Deployment
-      run:  echo "Deploying to cloud...."
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v3
+      - name: Setup NodeJS
+        uses: setup-nodejs@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        uses: npm ci
+      - name: Run linting
+        uses: npm run lint
+      - name: Build project
+        uses: npm run build 
+      - name: Deployment
+        run:  echo "Deploying to cloud...."

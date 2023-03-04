@@ -11,10 +11,10 @@ jobs:
         with:
           node-version: 18
       - name: Install dependencies
-        uses: npm ci
+        run: npm ci
       - name: Run linting
-        uses: npm run lint
+        run: npm run lint
       - name: Build project
-        uses: npm run build 
+        run: npm run build 
       - name: Deployment
         run:  echo "Deploying to cloud...."

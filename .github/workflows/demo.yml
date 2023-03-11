@@ -1,5 +1,11 @@
 name: Demo Github Actions
-on: [pull_request, push]
+on: 
+  pull_request:
+    branches: 
+      - master
+  push:
+    branches:
+      - dev
 jobs: 
   lint:
     runs-on: ubuntu-latest

@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Get the code
-      run: actions/checkout@v3
+      uses: actions/checkout@v3
     - name: Install NodeJS
-      run: actions/setup-NodeJS
+      uses: actions/setup-node@v3
     - name: Install dependencies
       run: npm ci
     - name: linting
@@ -17,26 +17,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:   
     - name: Get the code
-      run: actions/checkout@v3
+      uses: actions/checkout@v3
     - name: Install NodeJS
-      run: actions/setup-NodeJS
+      uses: actions/setup-node@v3
     - name: Install dependencies
       run: npm ci
     - name: Build code
       run: npm run code
   deploy:
-    needs: lint
+    needs: build
     runs-on: ubuntu-latest
     steps:   
     - name: Get the code
-      run: actions/checkout@v3
+      uses: actions/checkout@v3
     - name: Install NodeJS
-      run: actions/setup-NodeJS
+      uses: actions/setup-node@v3
     - name: Install dependencies
       run: npm ci
     - name: Build code
       run: npm run code
     - name: Deploy code
-      run: echo Deploying....
+      run: echo "Deploying...."
 
 
